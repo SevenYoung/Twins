@@ -1,2 +1,2 @@
 # Twins
-The tradition data structure and algorithm and the countpart in concurrency,with the performan comparasion.
+The tradition data structure and algorithm and the counterpart in concurrency,with the performance comparison.
