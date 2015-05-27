@@ -47,13 +47,13 @@ public class LinkedStack<T> implements Iterable<T>{
     }
 
     //Whether this stack is empty?
-    boolean isEmpty(){return size == 0;}
+    public boolean isEmpty(){return size == 0;}
 
     //The number of items in this stack
-    int size(){return size;}
+    public int size(){return size;}
 
     //Push an item to the top of this stack
-    void push(T item){
+    public void push(T item){
         //If now the stack is empty,then this item is the first item
         if(isEmpty()){
             Node node = new Node(item,null);
@@ -68,9 +68,9 @@ public class LinkedStack<T> implements Iterable<T>{
     }
 
     //Peek the top item without removing it
-    T peek(){return top.record;}
+    public T peek(){return top.record;}
 
-    T pop(){
+    public T pop(){
         Node tmp = top;
         T item = tmp.record;
         top = tmp.next;
@@ -81,14 +81,14 @@ public class LinkedStack<T> implements Iterable<T>{
 
     //For the test
 //    public static void main(String[] args) {
-//        LinkedStack<Integer> ls = new LinkedStack<>();
-//        int[] input = {1,2,3,4,5};
-//        for(int i: input){
+//        LinkedStack<Double> ls = new LinkedStack<>();
+//        double[] input = {1.0,2.0,3.0,4.0,5.0};
+//        for(double i: input){
 //            ls.push(i);
 //        }
 //        System.out.printf("size: " + ls.size() + " " +
 //                "IsEmpty: " + ls.isEmpty() + "\n");
-//        for(int i:ls){
+//        for(double i:ls){
 //            System.out.println(i);
 //        }
 //    }
