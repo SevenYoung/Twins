@@ -106,10 +106,10 @@ public class LinkedList<T> implements Iterable<T>{
     }
 
     public T removeLast(){
-        Node tmp = last;
         //If there is no elements in this list,return null
-        if(tmp == null) return null;
-        else if(tmp == first) {
+        if(isEmpty()) return null;
+        Node tmp = last;
+        if(tmp == first) {
             //only one element in this list
             T item = tmp.record;
             first = last = null;
@@ -133,5 +133,4 @@ public class LinkedList<T> implements Iterable<T>{
     //Peek the first item without removing it
     public T peekFirst(){return first.record;}
     public T peekLast(){return last.record;}
-
 }
