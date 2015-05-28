@@ -42,8 +42,8 @@ public class LinkedList<T> implements Iterable<T>{
     }
 
     private Node first;
-    private int size;
     private Node last;
+    private int size;
 
     public LinkedList(){
         size = 0;
@@ -51,9 +51,6 @@ public class LinkedList<T> implements Iterable<T>{
         last = null;
     }
 
-    public Node getFirst(){
-        return first;
-    }
     //Whether this list is empty?
     public boolean isEmpty(){return size == 0;}
 
@@ -75,17 +72,19 @@ public class LinkedList<T> implements Iterable<T>{
             size++;
         }
     }
-    //remove an item from the fist of this list
+    //remove an item from the first of this list
     public T removeFirst(){
+        //if this list is empty
+        if(isEmpty()) return null;
+        //at least one element
         Node tmp = first;
-        if(tmp == null)return null;
         T item = tmp.record;
         first = tmp.next;
+        size--;
         if(isEmpty()){
             last = null;
         }
         tmp = null;//for the garbage collection
-        size--;
         return item;
 
     }
@@ -131,26 +130,8 @@ public class LinkedList<T> implements Iterable<T>{
         }
     }
 
-
-
-
     //Peek the first item without removing it
     public T peekFirst(){return first.record;}
     public T peekLast(){return last.record;}
-
-
-
-    //For the test
-//    public static void main(String[] args) {
-//        LinkedList<Integer> ll = new LinkedList<>();
-//        int[] input = {1,2,3,4,5,6};
-//        for(int i:input)
-//            ll.insertLast(i);
-//        ll.removeFirst();
-//        ll.removeLast();
-//        for(int i:ll)
-//            System.out.println(i);
-//
-//    }
 
 }
