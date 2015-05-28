@@ -12,14 +12,17 @@ public class LinkedStack<T> implements Iterable<T>{
     }
 
     private class LinkedStackIterator<T> implements Iterator<T> {
+        Node tmp = top;
         @Override
         public boolean hasNext() {
-            return !isEmpty();
+            return tmp != null;
         }
 
         @Override
         public T next() {
-            return (T) pop();
+            T res =  (T) tmp.record;
+            tmp = tmp.next;
+            return res;
         }
 
         @Override
@@ -91,6 +94,12 @@ public class LinkedStack<T> implements Iterable<T>{
 //        for(double i:ls){
 //            System.out.println(i);
 //        }
+//        System.out.printf("size: " + ls.size() + " " +
+//                "IsEmpty: " + ls.isEmpty() + "\n");
+//        for(double i:ls){
+//            System.out.println(i);
+//        }
+//
 //    }
 
 }
