@@ -145,12 +145,12 @@ public class Expression {
     }
 
     //main for testing
-    public static void main(String[] args) {
-        Expression exp = new Expression("(12+3)/5-1#");
-        for(String i: exp.resolve("(12+3)/5-1#")){
-            System.out.println(i);
-        }
-        System.out.println(exp.evaluate());
-
-    }
+//    public static void main(String[] args) {
+//        Expression exp = new Expression("(12+3)/5*(1+2)-1#");
+//        for(String i: exp.resolve("(12+3)/5-1#")){
+//            System.out.println(i);
+//        }
+//        System.out.println(exp.evaluate());
+//
+//    }
 }
