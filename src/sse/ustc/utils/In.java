@@ -1,4 +1,4 @@
-package cn.young.utils; /*************************************************************************
+package sse.ustc.utils; /*************************************************************************
  *  Compilation:  javac In.java
  *  Execution:    java In   (basic test --- see source for required files)
  *
@@ -398,7 +398,7 @@ public final class In {
 
     /**
      * Reads all ints from stdin
-     * @deprecated Clearer to use {@link cn.young.utils.StdIn#readAllInts()}
+     * @deprecated Clearer to use {@link StdIn#readAllInts()}
      */
     public static int[] readInts() {
         return new In().readAllInts();
@@ -406,7 +406,7 @@ public final class In {
 
    /**
      * Reads all doubles from stdin
-     * @deprecated Clearer to use {@link cn.young.utils.StdIn#readAllDoubles()}
+     * @deprecated Clearer to use {@link StdIn#readAllDoubles()}
      */
     public static double[] readDoubles() {
         return new In().readAllDoubles();
@@ -414,7 +414,7 @@ public final class In {
 
    /**
      * Reads all strings from stdin
-     * @deprecated Clearer to use {@link cn.young.utils.StdIn#readAllStrings()}
+     * @deprecated Clearer to use {@link StdIn#readAllStrings()}
      */
     public static String[] readStrings() {
         return new In().readAllStrings();

@@ -1,4 +1,4 @@
-package cn.young.utils; /*************************************************************************
+package sse.ustc.utils; /*************************************************************************
  *  Compilation:  javac Out.java
  *  Execution:    java Out
  *

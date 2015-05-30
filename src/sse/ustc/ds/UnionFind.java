@@ -1,7 +1,7 @@
-package cn.young.ds;
+package sse.ustc.ds;
 
-import cn.young.utils.StdIn;
-import cn.young.utils.StdOut;
+import sse.ustc.utils.StdIn;
+import sse.ustc.utils.StdOut;
 
 /**
  * Created by SevenYoung on 15-5-29.

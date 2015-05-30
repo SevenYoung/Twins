@@ -1,4 +1,4 @@
-package cn.young.ds;
+package sse.ustc.ds;
 
 /**
  * Created by SevenYoung on 15-5-28.

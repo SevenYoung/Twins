@@ -1,4 +1,4 @@
-package cn.young.ds;
+package sse.ustc.ds;
 
 import java.util.Iterator;
 

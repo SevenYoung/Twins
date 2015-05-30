@@ -1,6 +1,6 @@
-package cn.young.algo;
+package sse.ustc.algo;
 
-import cn.young.ds.LinkedStack;
+import sse.ustc.ds.LinkedStack;
 
 /**
  * Created by SevenYoung on 15-5-27.

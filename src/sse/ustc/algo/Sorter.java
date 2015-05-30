@@ -1,4 +1,4 @@
-package cn.young.algo;
+package sse.ustc.algo;
 
 /**
  * Created by SevenYoung on 15-5-29.
