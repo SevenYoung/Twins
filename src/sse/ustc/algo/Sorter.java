@@ -162,11 +162,40 @@ public class Sorter<T extends Comparable<T>> {
         exch(data,lo,j);
         return j;
     }
-//    public static void main(String[] args) {
-//        Integer[] input = {2,1,53,42,1,2,1,1,1,1,1,1,1,2,2,2,2,2,3,3,3,3};
-//        Sorter<Integer> sorter = new Sorter<>(input);
-//        input = sorter.quickSort();
-//        for(int i:input)
-//            System.out.println(i);
-//    }
+
+    //Return the kth smallest item, k is the array index
+    public T select(int k){
+        if(k < 0 && k > data.length) throw new IllegalArgumentException("k is out of range");
+        int lo = 0;
+        int hi = data.length - 1;
+//        int j = partition(data,lo,hi);
+//        while(j != k){
+//            if(k < j) {
+//                hi = j - 1;
+//                j = partition(data,lo,hi);
+//            }
+//            else if(k > j) {
+//                lo = j + 1;
+//                j = partition(data,lo,hi);
+//            }
+//        }
+//        return data[j];
+        while(hi > lo){
+            int i = partition(data,lo,hi);
+            if      (i > k) hi = i - 1;
+            else if (i < k) lo = i + 1;
+            else return data[i];
+        }
+        return data[lo];
+    }
+
+
+    public static void main(String[] args) {
+        Integer[] input = {2,1,53,42,1,2,23};
+        Sorter<Integer> sorter = new Sorter<>(input);
+        input = sorter.quickSort();
+        for(int i:input)
+            System.out.println(i);
+        System.out.println(sorter.select(6));
+    }
 }
