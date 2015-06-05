@@ -1,4 +1,7 @@
 package sse.ustc.algo;
+import sse.ustc.ds.MaxPriorityQueue;
+
+import java.util.Arrays;
 
 /**
  * Created by SevenYoung on 15-5-29.
@@ -163,6 +166,8 @@ public class Sorter<T extends Comparable<T>> {
         return j;
     }
 
+    //heap sort
+
     //Return the kth smallest item, k is the array index
     public T select(int k){
         if(k < 0 && k > data.length) throw new IllegalArgumentException("k is out of range");
@@ -189,13 +194,21 @@ public class Sorter<T extends Comparable<T>> {
         return data[lo];
     }
 
+    public  T[] heapsort(){
+        MaxPriorityQueue<T> mpq = new MaxPriorityQueue<>(data,true);
+        return mpq.heapsort();
+    }
+
 
     public static void main(String[] args) {
         Integer[] input = {2,1,53,42,1,2,23};
         Sorter<Integer> sorter = new Sorter<>(input);
-        input = sorter.quickSort();
-        for(int i:input)
-            System.out.println(i);
+//        input = sorter.mergeSort();
+        Comparable[] out = sorter.heapsort();
+        for(Comparable i:out)
+            System.out.print(i + " ");
+
+        System.out.println();
         System.out.println(sorter.select(6));
     }
 }
