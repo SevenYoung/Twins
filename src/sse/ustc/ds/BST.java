@@ -35,6 +35,10 @@ public class BST <Key extends Comparable<Key>,Value>{
         if(root == null) return new Node(key,value,1);
         //The BST is not empty
         else {
+            //The recursive function,you need to remember three things:
+            //(1)Process the start condition and current condition
+            //(2)Decrease the problem size
+            //(3)Clarify define the return of the function,and use it
             int cmp = key.compareTo(root.key);
             if(cmp < 0)         root.left = put(root.left, key, value);
             else if(cmp > 0)    root.right =  put(root.right, key, value);
