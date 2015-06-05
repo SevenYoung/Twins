@@ -8,12 +8,12 @@ public class MinPriorityQueue <T extends Comparable<T>>{
     private int N = 0;//the number of current elements
     private T[] data;//the data collection
 
-    MinPriorityQueue(int capacity){
+    public MinPriorityQueue(int capacity){
         data = (T[])new Comparable[capacity + 1];//without using data[0]
         N = 0;
     }
 
-    MinPriorityQueue(T[] array){
+    public MinPriorityQueue(T[] array){
         data = (T[])new Comparable[array.length + 1];//without using data[0]
         N = 0;
         for(T i: array)
@@ -65,12 +65,12 @@ public class MinPriorityQueue <T extends Comparable<T>>{
         }
     }
 
-    public static void main(String[] args) {
-        Integer[] input = {23,1,52,2,4};
-        MinPriorityQueue<Integer> mpq = new MinPriorityQueue<Integer>(input);
-        System.out.println(mpq.size());
-        while(!mpq.isEmpty()){
-            System.out.println(mpq.delMin());
-        }
-    }
+//    public static void main(String[] args) {
+//        Integer[] input = {23,1,52,2,4};
+//        MinPriorityQueue<Integer> mpq = new MinPriorityQueue<Integer>(input);
+//        System.out.println(mpq.size());
+//        while(!mpq.isEmpty()){
+//            System.out.println(mpq.delMin());
+//        }
+//    }
 }

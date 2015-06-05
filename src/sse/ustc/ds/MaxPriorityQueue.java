@@ -1,5 +1,7 @@
 package sse.ustc.ds;
 
+import java.util.Arrays;
+
 /**
  * Created by SevenYoung on 15-6-1.
  */
@@ -8,17 +10,29 @@ public class MaxPriorityQueue<T extends Comparable<T>> {
     private int N = 0;//the number of current elements
     private T[] data;//the data collection
 
-    MaxPriorityQueue(int capacity){
+    public MaxPriorityQueue(int capacity){
         data = (T[])new Comparable[capacity + 1];//without using data[0]
         N = 0;
     }
 
-    MaxPriorityQueue(T[] array){
-        data = (T[])new Comparable[array.length + 1];//without using data[0]
-        N = 0;
-        for(T i: array)
-            insert(i);
+
+    public MaxPriorityQueue(T[] array, boolean forSort){
+        //forSort represents whether this pq used for heap sort
+        if(forSort == false){
+            data = (T[])new Comparable[array.length + 1];//without using data[0]
+            N = 0;
+            for(T i: array)
+                insert(i);
+        }
+        else{
+            data = (T[])new Comparable[array.length + 1];//without using data[0],for heap sort
+            for(int i=1; i<data.length; i++)
+                data[i] = array[i-1];
+            N = data.length - 1;
+
+        }
     }
+
 
     public int size(){return N;}
     public boolean isEmpty(){return N==0;}
@@ -65,12 +79,37 @@ public class MaxPriorityQueue<T extends Comparable<T>> {
         }
     }
 
-    public static void main(String[] args) {
-        Integer[] input = {23,1,52,2,4};
-        MaxPriorityQueue<Integer> mpq = new MaxPriorityQueue<Integer>(input);
-        while(!mpq.isEmpty()){
-            System.out.println(mpq.delMax());
-        }
+    public T[] heapsort(){
+        for(int i=N/2; i>=1; i--)down(i);
+        while(N>1){exch(1,N--);down(1);}
+        T[] res = Arrays.copyOfRange(data,1,data.length);
+        return res;
     }
+
+    public String toString(){
+        String res = "";
+        for(T i:data){res+=" ";res+=i;}
+
+        return res;
+    }
+
+//    public static void main(String[] args) {
+//        Integer[] input = {23,1,52,2,4};
+//        MaxPriorityQueue<Integer> mpq = new MaxPriorityQueue<>(3);
+//        for(int i:input )
+//        System.out.println(mpq);
+//        while(!mpq.isEmpty())
+//            System.out.println(mpq.delMax());
+
+//        for(int i:input)
+//            System.out.print(i + " ");
+//        System.out.println();
+//
+//        Comparable[] out = mpq.heapsort();
+//        for(Comparable i:out)
+//            System.out.println(i);
+//        System.out.println(mpq);
+//
+//    }
 
 }
