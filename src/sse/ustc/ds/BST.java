@@ -10,7 +10,47 @@ public class BST <Key extends Comparable<Key>,Value>{
     //The Binary Search Tree can serve as Symbol Table
     private Node root;//Every node is the root of its subtree
 
-    private class Node{
+    public class Node{
+        public Key getKey() {
+            return key;
+        }
+
+        public Value getValue() {
+            return value;
+        }
+
+        public Node getLeft() {
+            return left;
+        }
+
+        public Node getRight() {
+            return right;
+        }
+
+        public int getN() {
+            return N;
+        }
+
+        public void setKey(Key key) {
+            this.key = key;
+        }
+
+        public void setValue(Value value) {
+            this.value = value;
+        }
+
+        public void setLeft(Node left) {
+            this.left = left;
+        }
+
+        public void setRight(Node right) {
+            this.right = right;
+        }
+
+        public void setN(int n) {
+            N = n;
+        }
+
         private Key key;
         private Value value;
         private Node left;
@@ -21,6 +61,7 @@ public class BST <Key extends Comparable<Key>,Value>{
             this.value = value;
             this.N = N;
         }
+
     }
 
     public BST(){root = null;}
@@ -49,7 +90,7 @@ public class BST <Key extends Comparable<Key>,Value>{
 
     }
 
-    private int size(Node root){
+    public int size(Node root){
         if(root == null) return 0;
         else return root.N;
     }
@@ -287,12 +328,12 @@ public class BST <Key extends Comparable<Key>,Value>{
         display(root);
     }
 
-    private void display(Node root){
-        System.out.println("<" + root.key + "," + root.value + ">");
-        if(root.left != null)
-            display(root.left);
-        if(root.right != null)
-            display(root.right);
+    void display(Node root){
+        System.out.println("<" + root.getKey() + "," + root.getValue() + ">");
+        if(root.getLeft() != null)
+            display(root.getLeft());
+        if(root.getRight() != null)
+            display(root.getRight());
     }
 
 //    public static void main(String[] args) {
